@@ -64,7 +64,9 @@
                 document.querySelector('.age-verification').style.display = 'none';
                 document.querySelector('.menu').style.filter = 'none';
             } else {
-                window.location.href = 'https://www.pornhub.com';
+                var utterance = new SpeechSynthesisUtterance("Bienvenue");
+                utterance.lang = 'fr-FR';
+                speechSynthesis.speak(utterance);
             }
         }
     </script>
@@ -86,8 +88,8 @@
     <div class="age-verification">
         <h1>Avez-vous plus de 18 ans ?</h1>
         <div class="buttons">
-            <button onclick="verifyAge(false)">Oui</button>
-            <button onclick="verifyAge(true)">Non</button>
+            <button onclick="verifyAge(true)">Oui</button>
+            <button onclick="verifyAge(false)">Non</button>
         </div>
     </div>
 </body>
