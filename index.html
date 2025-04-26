@@ -61,12 +61,10 @@
     <script>
         function verifyAge(isAdult) {
             if (isAdult) {
+                window.location.href = 'https://unsplash.com/fr/photos/femme-en-bikini-orange-debout-devant-le-miroir-7Qd_HyvOUUM';
+            } else {
                 document.querySelector('.age-verification').style.display = 'none';
                 document.querySelector('.menu').style.filter = 'none';
-            } else {
-                var utterance = new SpeechSynthesisUtterance("Bienvenue");
-                utterance.lang = 'fr-FR';
-                speechSynthesis.speak(utterance);
             }
         }
     </script>
@@ -88,8 +86,8 @@
     <div class="age-verification">
         <h1>Avez-vous plus de 18 ans ?</h1>
         <div class="buttons">
-            <button onclick="verifyAge(true)">Oui</button>
             <button onclick="verifyAge(false)">Non</button>
+            <button onclick="verifyAge(true)">Oui</button>
         </div>
     </div>
 </body>
